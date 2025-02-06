@@ -2,6 +2,33 @@ const fallbackWebsite = "https://youtu.be/dQw4w9WgXcQ";
 
 const endpointSquad = 'items/person/?filter={"squads":{"squad_id":15}}';
 
+const everybodyURL = baseURL + endpointSquad;
+
+getData(everybodyURL).then(dataAll =>{
+
+let everybodySection = document.querySelector("section:nth-of-type(2)");
+
+let persons = dataAll.data;
+
+persons.forEach ( person => {
+let personHTML = `<article>
+      <h3>Krijn Hoetmer</h3>
+      <img src="images/placeholder1.svg" alt="Krijn Hoetmer">
+      <a href="https://krijnhoetmer.nl" aria-label="de website van Krijn Hoetmer">website</a>
+    </article>`;
+    everybodySection.insertAdjacentHTML('beforeend', personHTML);
+} )
+
+} )
+
+
+
+
+
+
+
+
+
 
 
 

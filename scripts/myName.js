@@ -3,9 +3,35 @@
 // 1 persoon: https://fdnd.directus.app/items/person/67
 // iedereen: https://fdnd.directus.app/items/person/?fields=id,name,github_handle,avatar&filter={%22squads%22:{%22squad_id%22:{%22name%22:%22Minor%20Web%20Dev%22}}}&sort=name
 
+// Variabelen die de onderdelen van de url van de API bewaren.
 const baseURL = 'https://fdnd.directus.app/';
-const endpointMe = 'items/person/67';
+const endpointMe = 'items/person/220';
 
+// BaseURl + ENdpoint is de volledige URL naar mijn persoonlijke data
+const myURL = baseURL + endpointMe;
+
+// console.log(myURL);
+
+
+// getData haalt de data op van person 220 dan geef link hernoem je het naar dataStijn
+getData(myURL).then(dataStijn => {
+
+// console.log(data71.data.name);
+
+// myName is de info van JSON
+let myName = dataStijn.data.name;
+let deH1 = document.querySelector("h1");
+console.log(myName);
+
+// vervangt de H1 tag met de data die uit de JS komt
+deH1.textContent = myName;
+
+let myBirthday = dataStijn.data.birthdate;
+let deH4 = document.querySelector("h4");
+console.log(myBirthday);
+
+deH4.textContent = myBirthday
+}   );
 
 
 
