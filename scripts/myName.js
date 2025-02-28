@@ -7,7 +7,7 @@
 const baseURL = 'https://fdnd.directus.app/';
 const endpointMe = 'items/person/220';
 
-// BaseURl + ENdpoint is de volledige URL naar mijn persoonlijke data
+// BaseURL + ENDpointMe is de volledige URL naar mijn persoonlijke data
 const myURL = baseURL + endpointMe;
 
 // console.log(myURL);

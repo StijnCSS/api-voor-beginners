@@ -11,11 +11,23 @@ let everybodySection = document.querySelector("section:nth-of-type(2)");
 let persons = dataAll.data;
 
 persons.forEach ( person => {
+
+let personName = person.name;
+let personImg = person.avatar;
+let personSite = person.website;
+
+if (personImg) {
+    // do Nothing
+} else {
+personImg = "images/placeholder2.svg";
+}
+
 let personHTML = `<article>
-      <h3>Krijn Hoetmer</h3>
-      <img src="images/placeholder1.svg" alt="Krijn Hoetmer">
-      <a href="https://krijnhoetmer.nl" aria-label="de website van Krijn Hoetmer">website</a>
+      <h3>${personName}</h3>
+      <img src="${personImg}" alt="${personName}">
+      <a href="${personSite}" aria-label="de website van ${personName}">website</a>
     </article>`;
+    
     everybodySection.insertAdjacentHTML('beforeend', personHTML);
 } )
 
